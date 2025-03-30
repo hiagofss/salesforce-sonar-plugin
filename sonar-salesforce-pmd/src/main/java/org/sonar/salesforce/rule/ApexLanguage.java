@@ -24,13 +24,13 @@ import org.sonar.salesforce.SalesforcePlugin;
 
 public final class ApexLanguage extends AbstractLanguage {
 
-	public ApexLanguage() {
-		super(SalesforcePlugin.LANGUAGE_KEY, "Apex");
-	}
+  public ApexLanguage() {
+    super(SalesforcePlugin.LANGUAGE_KEY, "Apex");
+  }
 
-	@Override
-	public String[] getFileSuffixes() {
-		String[] suffixes = {".cls"};
-		return suffixes;
-	}
+  @Override
+  public String[] getFileSuffixes() {
+    String[] suffixes = {".cls"};
+    return suffixes;
+  }
 }

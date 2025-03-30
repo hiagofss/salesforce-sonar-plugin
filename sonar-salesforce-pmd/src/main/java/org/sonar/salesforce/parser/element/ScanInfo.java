@@ -24,33 +24,31 @@ import java.util.Collection;
 
 public class ScanInfo {
 
-    private String engineVersion;
-    private String scanDate;
-    private Collection<DataSource> dataSources = new ArrayList<>();
+  private String engineVersion;
+  private String scanDate;
+  private Collection<DataSource> dataSources = new ArrayList<>();
 
+  public String getEngineVersion() {
+    return engineVersion;
+  }
 
-    public String getEngineVersion() {
-        return engineVersion;
-    }
+  public void setEngineVersion(String engineVersion) {
+    this.engineVersion = engineVersion;
+  }
 
-    public void setEngineVersion(String engineVersion) {
-        this.engineVersion = engineVersion;
-    }
+  public Collection<DataSource> getDataSources() {
+    return dataSources;
+  }
 
-    public Collection<DataSource> getDataSources() {
-        return dataSources;
-    }
+  public void setDataSources(Collection<DataSource> dataSources) {
+    this.dataSources = dataSources;
+  }
 
-    public void setDataSources(Collection<DataSource> dataSources) {
-        this.dataSources = dataSources;
-    }
+  public String getScanDate() {
+    return scanDate;
+  }
 
-    public String getScanDate() {
-        return scanDate;
-    }
-
-    public void setScanDate(String scanDate) {
-        this.scanDate = scanDate;
-    }
-
+  public void setScanDate(String scanDate) {
+    this.scanDate = scanDate;
+  }
 }

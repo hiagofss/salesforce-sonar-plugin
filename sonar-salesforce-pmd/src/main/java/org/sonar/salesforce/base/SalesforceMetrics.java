@@ -27,57 +27,62 @@ import java.util.List;
 
 public final class SalesforceMetrics implements Metrics {
 
-    private static final String DOMAIN = "Salesforce";
+  private static final String DOMAIN = "Salesforce";
 
-    private static final String TOTAL_VIOLATIONS_KEY = "total_violations";
-    private static final String HIGH_SEVERITY_VIOLATIONS_KEY = "high_severity_violations";
-    private static final String MEDIUM_SEVERITY_VIOLATIONS_KEY = "medium_severity_violations";
-    private static final String LOW_SEVERITY_VIOLATIONS_KEY = "low_severity_violations";
+  private static final String TOTAL_VIOLATIONS_KEY = "total_violations";
+  private static final String HIGH_SEVERITY_VIOLATIONS_KEY = "high_severity_violations";
+  private static final String MEDIUM_SEVERITY_VIOLATIONS_KEY = "medium_severity_violations";
+  private static final String LOW_SEVERITY_VIOLATIONS_KEY = "low_severity_violations";
 
-    public static final Metric<Serializable> HIGH_SEVERITY_VIOLATIONS = new Metric.Builder(HIGH_SEVERITY_VIOLATIONS_KEY, "High Severity Violations", Metric.ValueType.INT)
-            .setDescription("High Severity Violations")
-            .setDirection(Metric.DIRECTION_WORST)
-            .setQualitative(false)
-            .setDomain(SalesforceMetrics.DOMAIN)
-            .setBestValue(0.0)
-            .setHidden(false)
-            .create();
+  public static final Metric<Serializable> HIGH_SEVERITY_VIOLATIONS =
+      new Metric.Builder(
+              HIGH_SEVERITY_VIOLATIONS_KEY, "High Severity Violations", Metric.ValueType.INT)
+          .setDescription("High Severity Violations")
+          .setDirection(Metric.DIRECTION_WORST)
+          .setQualitative(false)
+          .setDomain(SalesforceMetrics.DOMAIN)
+          .setBestValue(0.0)
+          .setHidden(false)
+          .create();
 
-    public static final Metric<Serializable> MEDIUM_SEVERITY_VIOLATIONS = new Metric.Builder(MEDIUM_SEVERITY_VIOLATIONS_KEY, "Medium Severity Violations", Metric.ValueType.INT)
-            .setDescription("Medium Severity Violations")
-            .setDirection(Metric.DIRECTION_WORST)
-            .setQualitative(false)
-            .setDomain(SalesforceMetrics.DOMAIN)
-            .setBestValue(0.0)
-            .setHidden(false)
-            .create();
+  public static final Metric<Serializable> MEDIUM_SEVERITY_VIOLATIONS =
+      new Metric.Builder(
+              MEDIUM_SEVERITY_VIOLATIONS_KEY, "Medium Severity Violations", Metric.ValueType.INT)
+          .setDescription("Medium Severity Violations")
+          .setDirection(Metric.DIRECTION_WORST)
+          .setQualitative(false)
+          .setDomain(SalesforceMetrics.DOMAIN)
+          .setBestValue(0.0)
+          .setHidden(false)
+          .create();
 
-    public static final Metric<Serializable> LOW_SEVERITY_VIOLATIONS = new Metric.Builder(LOW_SEVERITY_VIOLATIONS_KEY, "Low Severity Violations", Metric.ValueType.INT)
-            .setDescription("Low Severity Violations")
-            .setDirection(Metric.DIRECTION_WORST)
-            .setQualitative(false)
-            .setDomain(SalesforceMetrics.DOMAIN)
-            .setBestValue(0.0)
-            .setHidden(false)
-            .create();
+  public static final Metric<Serializable> LOW_SEVERITY_VIOLATIONS =
+      new Metric.Builder(
+              LOW_SEVERITY_VIOLATIONS_KEY, "Low Severity Violations", Metric.ValueType.INT)
+          .setDescription("Low Severity Violations")
+          .setDirection(Metric.DIRECTION_WORST)
+          .setQualitative(false)
+          .setDomain(SalesforceMetrics.DOMAIN)
+          .setBestValue(0.0)
+          .setHidden(false)
+          .create();
 
-    public static final Metric<Serializable> TOTAL_VIOLATIONS = new Metric.Builder(TOTAL_VIOLATIONS_KEY, "Total Violations", Metric.ValueType.INT)
-            .setDescription("Total Violations")
-            .setDirection(Metric.DIRECTION_WORST)
-            .setQualitative(false)
-            .setDomain(SalesforceMetrics.DOMAIN)
-            .setBestValue(0.0)
-            .setHidden(false)
-            .create();
+  public static final Metric<Serializable> TOTAL_VIOLATIONS =
+      new Metric.Builder(TOTAL_VIOLATIONS_KEY, "Total Violations", Metric.ValueType.INT)
+          .setDescription("Total Violations")
+          .setDirection(Metric.DIRECTION_WORST)
+          .setQualitative(false)
+          .setDomain(SalesforceMetrics.DOMAIN)
+          .setBestValue(0.0)
+          .setHidden(false)
+          .create();
 
-
-    @Override
-    public List<Metric> getMetrics() {
-        return Arrays.asList(
-            SalesforceMetrics.HIGH_SEVERITY_VIOLATIONS,
-            SalesforceMetrics.MEDIUM_SEVERITY_VIOLATIONS,
-            SalesforceMetrics.LOW_SEVERITY_VIOLATIONS,
-            SalesforceMetrics.TOTAL_VIOLATIONS
-        );
-    }
+  @Override
+  public List<Metric> getMetrics() {
+    return Arrays.asList(
+        SalesforceMetrics.HIGH_SEVERITY_VIOLATIONS,
+        SalesforceMetrics.MEDIUM_SEVERITY_VIOLATIONS,
+        SalesforceMetrics.LOW_SEVERITY_VIOLATIONS,
+        SalesforceMetrics.TOTAL_VIOLATIONS);
+  }
 }

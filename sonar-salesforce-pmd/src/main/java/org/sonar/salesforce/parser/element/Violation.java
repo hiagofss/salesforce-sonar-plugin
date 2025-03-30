@@ -24,101 +24,103 @@ package org.sonar.salesforce.parser.element;
 
 public class Violation {
 
-    private String rule;
-    private String description;
-    private String ruleset;
-    private String externalInfoUrl;
-    private String priority;
-    private String beginLine;
-    private String endLine;
-    private String beginColumn;
-    private String endColumn;
-    // private TextPointer start;
-    // private TextPointer end;
+  private String rule;
+  private String description;
+  private String ruleset;
+  private String externalInfoUrl;
+  private String priority;
+  private String beginLine;
+  private String endLine;
+  private String beginColumn;
+  private String endColumn;
 
-    public String getRule() {
-        return rule;
-    }
+  // private TextPointer start;
+  // private TextPointer end;
 
-    public void setRule(String rule){
-        this.rule = rule;
-    }
+  public String getRule() {
+    return rule;
+  }
 
-    public String getDescription() {
-        return description;
-    }
+  public void setRule(String rule) {
+    this.rule = rule;
+  }
 
-    public void setDescription(String description){
-        this.description = description;
-    }
+  public String getDescription() {
+    return description;
+  }
 
-    public String getRuleset() {
-        return ruleset;
-    }
+  public void setDescription(String description) {
+    this.description = description;
+  }
 
-    public void setRuleset(String ruleset){
-        this.ruleset = ruleset;
-    }
+  public String getRuleset() {
+    return ruleset;
+  }
 
-    public String getExternalInfoUrl() {
-        return externalInfoUrl;
-    }
+  public void setRuleset(String ruleset) {
+    this.ruleset = ruleset;
+  }
 
-    public void setExternalInfoUrl(String externalInfoUrl){
-        this.externalInfoUrl = externalInfoUrl;
-    }
+  public String getExternalInfoUrl() {
+    return externalInfoUrl;
+  }
 
-    public String getPriority() {
-        return priority;
-    }
+  public void setExternalInfoUrl(String externalInfoUrl) {
+    this.externalInfoUrl = externalInfoUrl;
+  }
 
-    public void setPriority(String priority){
-        this.priority = priority;
-    }
+  public String getPriority() {
+    return priority;
+  }
 
-    public String getBeginLine() {
-        return beginLine;
-    }
+  public void setPriority(String priority) {
+    this.priority = priority;
+  }
 
-    public void setBeginLine(String beginLine){
-        this.beginLine = beginLine;
-    }
+  public String getBeginLine() {
+    return beginLine;
+  }
 
-    public String getEndLine() {
-        return endLine;
-    }
+  public void setBeginLine(String beginLine) {
+    this.beginLine = beginLine;
+  }
 
-    public void setEndLine(String endLine){
-        this.endLine = endLine;
-    }
+  public String getEndLine() {
+    return endLine;
+  }
 
-    public String getBeginColumn() {
-        return beginColumn;
-    }
+  public void setEndLine(String endLine) {
+    this.endLine = endLine;
+  }
 
-    public void setBeginColumn(String beginColumn){
-        this.beginColumn = beginColumn;
-    }
+  public String getBeginColumn() {
+    return beginColumn;
+  }
 
-    public String getEndColumn() {
-        return endColumn;
-    }
+  public void setBeginColumn(String beginColumn) {
+    this.beginColumn = beginColumn;
+  }
 
-    public void setEndColumn(String endColumn){
-        this.endColumn = endColumn;
-    }
+  public String getEndColumn() {
+    return endColumn;
+  }
 
-    // public TextPointer getStartLocation() {
-    //     TextPointer start = new TextPointer(Integer.parseInt(this.beginLine), Integer.parseInt(this.beginColumn));
-    //     return start;
-    // }
+  public void setEndColumn(String endColumn) {
+    this.endColumn = endColumn;
+  }
 
-    // public TextPointer getEndLocation() {
-    //     return new TextPointer(Integer.parseInt(this.endLine), Integer.parseInt(this.endColumn));
-    // }
+  // public TextPointer getStartLocation() {
+  //     TextPointer start = new TextPointer(Integer.parseInt(this.beginLine),
+  // Integer.parseInt(this.beginColumn));
+  //     return start;
+  // }
 
-    // public TextRange getRange() {
-    //     return new TextRange(this.getStartLocation(), this.getEndLocation());
-    // }
+  // public TextPointer getEndLocation() {
+  //     return new TextPointer(Integer.parseInt(this.endLine), Integer.parseInt(this.endColumn));
+  // }
+
+  // public TextRange getRange() {
+  //     return new TextRange(this.getStartLocation(), this.getEndLocation());
+  // }
 
 }

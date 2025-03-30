@@ -33,59 +33,63 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 public class XmlReportFile {
-    private static final Logger LOGGER = Loggers.get(XmlReportFile.class);
+  private static final Logger LOGGER = Loggers.get(XmlReportFile.class);
 
-    private final Settings settings;
-    private final FileSystem fileSystem;
-    private final PathResolver pathResolver;
+  private final Settings settings;
+  private final FileSystem fileSystem;
+  private final PathResolver pathResolver;
 
-    private File report;
+  private File report;
 
-    public XmlReportFile(Settings settings, FileSystem fileSystem, PathResolver pathResolver) {
-        this.settings = settings;
-        this.fileSystem = fileSystem;
-        this.pathResolver = pathResolver;
+  public XmlReportFile(Settings settings, FileSystem fileSystem, PathResolver pathResolver) {
+    this.settings = settings;
+    this.fileSystem = fileSystem;
+    this.pathResolver = pathResolver;
+  }
+
+  /**
+   * Report file, null if the property is not set.
+   *
+   * @throws org.sonar.api.utils.MessageException if the property relates to a directory or a
+   *     non-existing file.
+   */
+  @CheckForNull
+  private File getReportFromProperty(String property) {
+    String path = settings.getString(property);
+    if (path == null) {
+      return null;
     }
 
-    /**
-     * Report file, null if the property is not set.
-     *
-     * @throws org.sonar.api.utils.MessageException if the property relates to a directory or a non-existing file.
-     */
-    @CheckForNull
-    private File getReportFromProperty(String property) {
-        String path = settings.getString(property);
-        if (path == null) {
-            return null;
-        }
+    this.report = pathResolver.relativeFile(fileSystem.baseDir(), path);
 
-        this.report = pathResolver.relativeFile(fileSystem.baseDir(), path);
-
-        if (report != null && !report.isFile()) {
-            LOGGER.warn("PMD report does not exist. SKIPPING. Please check property " +
-                    SalesforceConstants.REPORT_PATH_PROPERTY + ": " + path);
-            return null;
-        }
-        return report;
+    if (report != null && !report.isFile()) {
+      LOGGER.warn(
+          "PMD report does not exist. SKIPPING. Please check property "
+              + SalesforceConstants.REPORT_PATH_PROPERTY
+              + ": "
+              + path);
+      return null;
     }
+    return report;
+  }
 
-    public File getFile(String property) {
-        if (report == null) {
-            report = getReportFromProperty(property);
-        }
-        return report;
+  public File getFile(String property) {
+    if (report == null) {
+      report = getReportFromProperty(property);
     }
+    return report;
+  }
 
-    public InputStream getInputStream(String property) throws FileNotFoundException {
-        File reportFile = getFile(property);
-        if (reportFile == null) {
-            throw new FileNotFoundException("PMD report does not exist.");
-        }
-        return new FileInputStream(reportFile);
+  public InputStream getInputStream(String property) throws FileNotFoundException {
+    File reportFile = getFile(property);
+    if (reportFile == null) {
+      throw new FileNotFoundException("PMD report does not exist.");
     }
+    return new FileInputStream(reportFile);
+  }
 
-    public boolean exist(String property) {
-        File reportFile = getReportFromProperty(property);
-        return reportFile != null;
-    }
+  public boolean exist(String property) {
+    File reportFile = getReportFromProperty(property);
+    return reportFile != null;
+  }
 }

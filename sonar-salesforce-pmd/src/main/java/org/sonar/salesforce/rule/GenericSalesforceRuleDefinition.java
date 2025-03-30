@@ -71,6 +71,7 @@ public class GenericSalesforceRuleDefinition implements RulesDefinition {
         addRulesFromPmdRuleset(repository, "/org/sonar/salesforce/rulesets/apex/errorprone.xml", RuleType.BUG);
         addRulesFromPmdRuleset(repository, "/org/sonar/salesforce/rulesets/apex/performance.xml", RuleType.BUG);
         addRulesFromPmdRuleset(repository, "/org/sonar/salesforce/rulesets/apex/security.xml", RuleType.VULNERABILITY);
+        // addRulesFromPmdRuleset(repository, "/org/sonar/salesforce/rulesets/apex/documentation.xml", RuleType.CODE_SMELL);
 
 
        repository.done();

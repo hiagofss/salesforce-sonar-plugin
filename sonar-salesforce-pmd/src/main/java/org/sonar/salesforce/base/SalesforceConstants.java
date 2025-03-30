@@ -21,9 +21,7 @@ package org.sonar.salesforce.base;
 
 public final class SalesforceConstants {
 
-    public static final String REPORT_PATH_PROPERTY = "sonar.salesforce.reportPath";
+  public static final String REPORT_PATH_PROPERTY = "sonar.salesforce.reportPath";
 
-    private SalesforceConstants() {
-    }
-
+  private SalesforceConstants() {}
 }

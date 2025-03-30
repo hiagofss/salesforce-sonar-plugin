@@ -30,25 +30,24 @@ import org.sonar.salesforce.rule.GenericSalesforceRuleDefinition;
 
 public class SalesforcePlugin implements Plugin {
 
-    public static final String REPOSITORY_KEY = "Salesforce";
-    public static final String LANGUAGE_KEY = "apex";
+  public static final String REPOSITORY_KEY = "Salesforce";
+  public static final String LANGUAGE_KEY = "apex";
 
-    @Override
-    public void define(Context context) {
-        context.addExtensions(SalesforceSensor.class,
-                              SalesforceMetrics.class,
-                              SalesforceProfile.class,
-                              GenericSalesforceRuleDefinition.class,
-                              ApexLanguage.class);
+  @Override
+  public void define(Context context) {
+    context.addExtensions(
+        SalesforceSensor.class,
+        SalesforceMetrics.class,
+        SalesforceProfile.class,
+        GenericSalesforceRuleDefinition.class,
+        ApexLanguage.class);
 
-        context.addExtension(
-                PropertyDefinition.builder(SalesforceConstants.REPORT_PATH_PROPERTY)
-                        .subCategory("Paths")
-                        .name("PMD report path")
-                        .description("path to the pmd xml results file")
-                        .defaultValue("${WORKSPACE}/pmd-report.xml")
-                        .build()
-        );
-    }
-
+    context.addExtension(
+        PropertyDefinition.builder(SalesforceConstants.REPORT_PATH_PROPERTY)
+            .subCategory("Paths")
+            .name("PMD report path")
+            .description("path to the pmd xml results file")
+            .defaultValue("${WORKSPACE}/pmd-report.xml")
+            .build());
+  }
 }

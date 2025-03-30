@@ -25,23 +25,22 @@ import java.util.Collections;
 
 public class File {
 
-    private String path;
-    private Collection<Violation> violations = Collections.emptyList();
+  private String path;
+  private Collection<Violation> violations = Collections.emptyList();
 
-    public String getPath() {
-        return path;
-    }
+  public String getPath() {
+    return path;
+  }
 
-    public void setPath(String path) {
-        this.path = path;
-    }
+  public void setPath(String path) {
+    this.path = path;
+  }
 
-    public Collection<Violation> getViolations() {
-        return violations;
-    }
+  public Collection<Violation> getViolations() {
+    return violations;
+  }
 
-    public void setViolations(Collection<Violation> violations) {
-        this.violations = violations;
-    }
-
+  public void setViolations(Collection<Violation> violations) {
+    this.violations = violations;
+  }
 }

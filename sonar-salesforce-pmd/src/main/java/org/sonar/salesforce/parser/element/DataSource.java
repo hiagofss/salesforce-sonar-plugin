@@ -21,20 +21,19 @@ package org.sonar.salesforce.parser.element;
 
 public class DataSource {
 
-    private final String name;
-    private final String timeStamp;
+  private final String name;
+  private final String timeStamp;
 
-    public DataSource(String name, String timeStamp) {
-        this.name = name;
-        this.timeStamp = timeStamp;
-    }
+  public DataSource(String name, String timeStamp) {
+    this.name = name;
+    this.timeStamp = timeStamp;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getTimeStamp() {
-        return timeStamp;
-    }
-
+  public String getTimeStamp() {
+    return timeStamp;
+  }
 }

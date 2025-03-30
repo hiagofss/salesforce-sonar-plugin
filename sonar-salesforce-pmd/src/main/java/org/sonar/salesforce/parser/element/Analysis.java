@@ -23,20 +23,19 @@ import java.util.Collection;
 
 public class Analysis {
 
-    private final ScanInfo scanInfo;
-    private final Collection<File> files;
+  private final ScanInfo scanInfo;
+  private final Collection<File> files;
 
-    public Analysis(ScanInfo scanInfo, Collection<File> files) {
-        this.scanInfo = scanInfo;
-        this.files = files;
-    }
+  public Analysis(ScanInfo scanInfo, Collection<File> files) {
+    this.scanInfo = scanInfo;
+    this.files = files;
+  }
 
-    public ScanInfo getScanInfo() {
-        return scanInfo;
-    }
+  public ScanInfo getScanInfo() {
+    return scanInfo;
+  }
 
-    public Collection<File> getFiles() {
-        return files;
-    }
-
+  public Collection<File> getFiles() {
+    return files;
+  }
 }
