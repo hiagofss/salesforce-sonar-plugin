@@ -26,8 +26,7 @@ import org.sonar.salesforce.SalesforcePlugin;
 public class SalesforceProfile implements BuiltInQualityProfilesDefinition {
 
   public void define(Context context) {
-    NewBuiltInQualityProfile profile =
-        context.createBuiltInQualityProfile("Salesforce", SalesforcePlugin.LANGUAGE_KEY);
+    NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile("Salesforce", SalesforcePlugin.LANGUAGE_KEY);
     profile.setDefault(true);
 
     profile.activateRule(SalesforcePlugin.REPOSITORY_KEY, "IfElseStmtsMustUseBraces");
@@ -80,7 +79,6 @@ public class SalesforceProfile implements BuiltInQualityProfilesDefinition {
     profile.activateRule(SalesforcePlugin.REPOSITORY_KEY, "ApexDangerousMethods");
     profile.activateRule(SalesforcePlugin.REPOSITORY_KEY, "UnusedMethod");
     profile.activateRule(SalesforcePlugin.REPOSITORY_KEY, "CognitiveComplexity");
-    profile.activateRule(SalesforcePlugin.REPOSITORY_KEY, "NcssConstructorCount");
     profile.activateRule(SalesforcePlugin.REPOSITORY_KEY, "ApexAssertionsShouldIncludeMessage");
     profile.activateRule(SalesforcePlugin.REPOSITORY_KEY, "ApexUnitTestClassShouldHaveRunAs");
     profile.activateRule(
